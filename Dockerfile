@@ -9,6 +9,6 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE ${PORT}
+EXPOSE 3002
 
 CMD sleep 1 && npm run start:prod

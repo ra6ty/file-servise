@@ -7,11 +7,11 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '0.0.0.0',
-      port: Number(process.env.PORT),
+      port: 3002,
     },
   });
 
   await app.listen();
-  console.log('✅ File Service (TCP) is running on port', process.env.PORT);
+  console.log('✅ File Service is running on TCP port 3002');
 }
 bootstrap();
