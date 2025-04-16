@@ -7,12 +7,11 @@ import { FileService } from './file.service';
 export class FileController {
     constructor(private fileService: FileService) {}
 
-    // Патерн "upload-file" – коли мікросервіс отримає повідомлення з таким патерном,
-    // викличеться метод "uploadFile".
     @MessagePattern({ cmd: 'upload-file' })
-    async uploadFile(@Payload() payload: any) {
-        // Тут ваш payload — це обʼєкт із даними, наприклад { filename, fileBase64 }.
-        return this.fileService.uploadFile(payload);
+    async uploadFile(
+        @Payload() data: { filename: string; fileBase64: string },
+    ) {
+        return this.fileService.uploadFile(data);
     }
 
     @MessagePattern({ cmd: 'get-file' })
