@@ -11,4 +11,4 @@ RUN npm run build
 
 EXPOSE ${PORT}
 
-CMD ["npm", "run", "start:prod"]
+CMD sleep 1 && npm run start:prod
